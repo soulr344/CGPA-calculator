@@ -1,4 +1,4 @@
-import { GRADES } from "../pages/subjects";
+import { GRADES } from "./subjects";
 
 export default function SelectGPA(props) {
     return (

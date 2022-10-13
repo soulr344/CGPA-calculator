@@ -1,4 +1,4 @@
-import { SUB_11_DETAILS_ASC, SUB_11_COMP_SUBS } from "../pages/subjects";
+import { SUB_11_DETAILS_ASC, SUB_11_COMP_SUBS } from "./subjects";
 
 export default function SelectSubject(props) {
     let arr = (props.isComp >= 3) ? SUB_11_DETAILS_ASC : SUB_11_COMP_SUBS; 

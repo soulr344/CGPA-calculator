@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import SelectGPA from "../components/SelectGPA";
 import SelectSubject from "../components/SelectSubject";
-import { calculate, parseGrade } from "./funcs";
+import { calculate, parseGrade } from "../components/funcs";
 
 export default function Home() {
     let [gpa, setGPA] = useState("");

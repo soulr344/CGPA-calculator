@@ -131,7 +131,7 @@ export default function Home() {
                         This is because each subject, along with Theory and Internal have different credit hours. Because of this, misselection of subjects and/or GPAs will result in inaccurate result (it&apos;s not incorrect tho technically, Garbage In Garbage Out lol).
                     </p>
                     <div className="mt-10">
-                        <img src="/eqn.svg" className="h-auto w-5/6 mx-auto" />
+                        <img alt="Formula to calculate CGPA" src="/eqn.svg" className="h-auto w-5/6 mx-auto" />
                     </div>
 
                     <p className="mt-8">

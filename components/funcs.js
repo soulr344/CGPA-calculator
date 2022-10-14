@@ -1,5 +1,3 @@
-import { SUB_11_COMP_SUBS, SUB_11_DETAILS_ASC,  } from "./subjects";
-
 const parseMarks = (grade) => {
     if (grade === "NG") return 0;
     return (
@@ -8,19 +6,18 @@ const parseMarks = (grade) => {
     ).toFixed(2);
 };
 
-const getCredit = (id, type = "TH", COMP = false) => {
-    let arr = (COMP) ? SUB_11_COMP_SUBS : SUB_11_DETAILS_ASC;
+const getCredit = (arr, id, type = "TH") => {
     return parseFloat(arr[id][(type == "IN") ? "internal_credit" : "theory_credit"])
 }
 
-const calculate = (marksObj) => {
+const calculate = (marksObj, compArr, allArr) => {
     let marks = 0
     let totalCredits = 0
 
     for(let i = 0; i<6; i++){
-        let inCredits = getCredit(marksObj[i].code, "IN", i <= 2)
-        let thCredits = getCredit(marksObj[i].code, "TH", i <= 2)
-        console.log(inCredits, thCredits)
+        let arr = (i<=2) ? compArr : allArr;
+        let inCredits = getCredit(arr, marksObj[i].code, "IN")
+        let thCredits = getCredit(arr, marksObj[i].code, "TH")
 
         marks = marks + parseMarks(marksObj[i].TH) * thCredits
         marks = marks + parseMarks(marksObj[i].IN) * inCredits

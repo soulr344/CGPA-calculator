@@ -1,7 +1,9 @@
-import { SUB_11_DETAILS_ASC, SUB_11_COMP_SUBS } from "./subjects";
+import { useContext } from "react";
+import { AppContext } from "./ApplicationContext";
 
 export default function SelectSubject(props) {
-    let arr = (props.isComp >= 3) ? SUB_11_DETAILS_ASC : SUB_11_COMP_SUBS; 
+    let {subArray, compSubArray} = useContext(AppContext)
+    let arr = (props.isComp >= 3) ? subArray : compSubArray; 
     return (
         <div> 
             <label htmlFor="countries" className="block mb-2 text-sm font-semibold text-gray-900 dark:text-gray-300">Subject:</label>

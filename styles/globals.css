@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        @apply transition-colors;
+    }
     body {
       @apply bg-blue-100;
       @apply dark:bg-slate-800;

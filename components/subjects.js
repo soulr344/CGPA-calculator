@@ -101,8 +101,8 @@ const SUB_12_DETAILS = [
         internal_credit: "1.25",
     },
     {
-        code: "1.25",
-        name: "Jurispudence and Legal",
+        code: "1101",
+        name: "Nepalese Legal system",
         full_marks: "75",
         pass_marks: "25",
         total_credits: "5",
@@ -119,8 +119,8 @@ const SUB_12_DETAILS = [
         internal_credit: "2.50",
     },
     {
-        code: "1.25",
-        name: "Child Development and",
+        code: "1181",
+        name: "Instructional Pedagogy and Evaluation",
         full_marks: "75",
         pass_marks: "25",
         total_credits: "5",
@@ -219,7 +219,7 @@ const SUB_12_DETAILS = [
     },
     {
         code: "2101",
-        name: "Procedural Law",
+        name: "Legal Drafting",
         full_marks: "50",
         pass_marks: "50",
         total_credits: "5",
@@ -398,8 +398,8 @@ const SUB_12_DETAILS = [
         internal_credit: "1.25",
     },
     {
-        code: "and",
-        name: "Constitutional Law 75 25",
+        code: "3201",
+        name: "Civil and Criminal law and justice",
         full_marks: "75",
         pass_marks: "25",
         total_credits: "5",
@@ -1131,12 +1131,12 @@ const SUB_11_DETAILS = [
     },
     {
         code: "1071",
-        name: "Jurispudence and Legal",
-        full_marks: "Theories",
-        pass_marks: "75",
-        total_credits: "25",
-        theory_credit: "5",
-        internal_credit: "3.75",
+        name: "Jurispudence and Legal Theories",
+        full_marks: "75",
+        pass_marks: "25",
+        total_credits: "5",
+        theory_credit: "3.75",
+        internal_credit: "1.25",
     },
     {
         code: "1111",
@@ -1149,12 +1149,12 @@ const SUB_11_DETAILS = [
     },
     {
         code: "1151",
-        name: "Child Development and",
-        full_marks: "Learning",
-        pass_marks: "75",
-        total_credits: "25",
-        theory_credit: "5",
-        internal_credit: "3.75",
+        name: "Child Development and Learning",
+        full_marks: "75",
+        pass_marks: "25",
+        total_credits: "5",
+        theory_credit: "3.75",
+        internal_credit: "1.25",
     },
     {
         code: "1191",
@@ -1428,12 +1428,12 @@ const SUB_11_DETAILS = [
     },
     {
         code: "3171",
-        name: "Constitutional Law 75 25",
-        full_marks: "5",
-        pass_marks: "3.75",
-        total_credits: "1.25",
-        theory_credit: "3201",
-        internal_credit: "Civil",
+        name: "Constitutional Law",
+        full_marks: "75",
+        pass_marks: "25",
+        total_credits: "5",
+        theory_credit: "3.75",
+        internal_credit: "1.25",
     },
     {
         code: "3211",
@@ -2058,7 +2058,26 @@ const SUB_11_DETAILS = [
     },
 ];
 
-const SUB_11_DETAILS_ASC = SUB_11_DETAILS.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-const SUB_11_COMP_SUBS = SUB_11_DETAILS_ASC.filter(subject => subject.name.indexOf("Com.") != -1)
+const SUB_11_DETAILS_ASC = SUB_11_DETAILS.sort((a, b) =>
+    a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+);
+const SUB_11_COMP_SUBS = SUB_11_DETAILS_ASC.filter(
+    (subject) => subject.name.indexOf("Com.") != -1
+);
 
-export { SUB_11_DETAILS, SUB_12_DETAILS, GRADES, SUB_11_DETAILS_ASC, SUB_11_COMP_SUBS};
+const SUB_12_DETAILS_ASC = SUB_12_DETAILS.sort((a, b) =>
+    a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+);
+const SUB_12_COMP_SUBS = SUB_12_DETAILS_ASC.filter(
+    (subject) => subject.name.indexOf("Com.") != -1
+);
+
+export {
+    SUB_11_DETAILS,
+    SUB_12_DETAILS,
+    GRADES,
+    SUB_11_DETAILS_ASC,
+    SUB_11_COMP_SUBS,
+    SUB_12_DETAILS_ASC,
+    SUB_12_COMP_SUBS,
+};

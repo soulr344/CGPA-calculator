@@ -1,4 +1,4 @@
-const GRADES = ["NG", "D", "D+", "C", "C+", "B", "B+", "A", "A+"].reverse();
+const GRADES = ["NG", "D", "C", "C+", "B", "B+", "A", "A+"].reverse();
 
 const SUB_12_DETAILS = [
     {

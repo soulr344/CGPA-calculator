@@ -1,8 +1,8 @@
 const parseMarks = (grade) => {
     if (grade === "NG") return 0;
     return (
-        0.4 * ["D", "D+", "C", "C+", "B", "B+", "A", "A+"].indexOf(grade) +
-        1.2
+        0.4 * ["D", "C", "C+", "B", "B+", "A", "A+"].indexOf(grade) +
+        1.6
     ).toFixed(2);
 };
 

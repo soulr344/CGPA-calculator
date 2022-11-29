@@ -3,7 +3,7 @@ const parseMarks = (grade) => {
     return (
         0.4 * ["D", "C", "C+", "B", "B+", "A", "A+"].indexOf(grade) +
         1.6
-    ).toFixed(2);
+    ).toString().substring(0,4);
 };
 
 const getCredit = (arr, id, type = "TH") => {
@@ -25,6 +25,7 @@ const calculate = (marksObj, compArr, allArr) => {
         totalCredits += inCredits + thCredits
     }
 
+    console.log(marks)
     let CGPA = (marks / totalCredits).toFixed(2);
 
     return CGPA;

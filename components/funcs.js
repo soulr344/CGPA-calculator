@@ -25,7 +25,6 @@ const calculate = (marksObj, compArr, allArr) => {
         totalCredits += inCredits + thCredits
     }
 
-    console.log(marks)
     let CGPA = (marks / totalCredits).toString().substring(0,4);;
 
     return CGPA;

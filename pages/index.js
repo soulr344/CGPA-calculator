@@ -21,6 +21,9 @@ export default function Home() {
     let checkRef = useRef(null);
 
     useEffect(() => {
+        /** if the page is being served via an iframe, dont access localstorage */
+        if (window.location !== window.parent.location) return;
+
         let dark = "true" == (localStorage.getItem("isDarkMode") || "false");
         if (dark) {
             localStorage.setItem("isDarkMode", (!dark).toString());
@@ -319,12 +322,12 @@ export default function Home() {
                             </a>
                         </div>
                         <span className="mt-3 block">
-                            Check the source code at 
+                            Check the source code at
                             <a
                                 className="ml-1 text-blue-500 font-bold underline"
                                 href="https://github.com/soulr344/cgpa-calculator"
                             >
-                            Github.
+                                Github.
                             </a>
                         </span>
                     </div>

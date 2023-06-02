@@ -98,31 +98,45 @@ export default function Home() {
       <Head>
         <title>CGPA Calculator</title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-          name="description"
-          content="Calculate CGPA according to NEB 10+2 latest marking strategy in Nepal."
-        />
-        <meta
-          name="keywords"
-          content="CGPA Calculator,NEB GPA,GPA Calculator,neb gpa calculator,gpa calculator neb,neb,gpa calculator 12,gpa calculator 11,cgpa 12,nepal,gpa,cgpa,12,11"
-        />
-        <meta
-          property="og:description"
-          content="Calculate CGPA according to NEB 10+2 latest marking strategy in Nepal."
-        />
-        <meta property="og:url" content="https://cgpa.prajwalpokharel.com.np/" />
-        <meta property="og:site_name" content="CGPA Calculator" />
-        <meta
-          property="og:image:url"
-          content="https://cgpa.prajwalpokharel.com.np/og.png"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="CGPA Calculator" />
-        <meta
-          name="twitter:image"
-          content="https://cgpa.prajwalpokharel.com.np/og.png"
-        />
+    <title>NEB GPA Calculator - Calculate +2 GPA</title>
+    <meta
+      name="description"
+      content="Calculate your +2 GPA of any stream effortlessly with our NEB-compliant tool. Stay on track, monitor your academic progress, and set new goals. Achieve academic excellence with our user-friendly GPA Calculator. Start calculating your GPA now!"
+    />
+    <link rel="author" href="https://prajwalpokharel.com.np" />
+    <meta name="author" content="Prajwal Pokharel" />
+    <meta
+      name="keywords"
+      content="GPA calculator, NEB marking scheme, +2 GPA, 11th grade GPA, 12th grade GPA, grade point average, GPA calculation, GPA tracker, academic progress tracking, scholastic achievement, student tools, educational resources, study tools, academic performance, college admissions, university preparation, high school GPA, credit hours, GPA scale, GPA converter, GPA calculation formula, GPA estimator, GPA calculator online, academic success, calculate grades, GPA calculator tool, academic grading, GPA calculator for students, educational technology, GPA calculation guidelines, GPA calculator Nepal, GPA calculation system, GPA calculator for +2 students"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="NEB GPA Calculator - Calculate +2 GPA" />
+    <meta
+      property="og:description"
+      content="Calculate your +2 GPA of any stream effortlessly with our NEB-compliant tool. Stay on track, monitor your academic progress, and set new goals. Achieve academic excellence with our user-friendly GPA Calculator. Start calculating your GPA now!"
+    />
+    <meta
+      property="og:url"
+      content="http://localhost:3000/gpa.prajwalpokharel.com.np"
+    />
+    <meta
+      property="og:image"
+      content="https://gpa.prajwalpokharel.com.np/og.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NEB GPA Calculator - Calculate +2 GPA"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculate your +2 GPA of any stream effortlessly with our NEB-compliant tool. Stay on track, monitor your academic progress, and set new goals. Achieve academic excellence with our user-friendly GPA Calculator. Start calculating your GPA now!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://gpa.prajwalpokharel.com.np/og.png"
+    />
       </Head>
       <AppContext.Provider value={providerValue}>
         <div className="pb-0 shadow-xl rounded-lg bg-white dark:bg-slate-700 dark:text-white w-[clamp(320px,90%,700px)] m-auto min-h-[80%]">

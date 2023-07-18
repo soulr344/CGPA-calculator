@@ -1,0 +1,209 @@
+.backdrop {
+  inset: 0;
+  display: none;
+  position: fixed;
+  z-index: 0;
+  background: transparent;
+}
+
+.backdrop.active {
+  display: block;
+}
+
+.select-wrapper.no-input {
+  width: fit-content;
+  min-width: 7rem;
+  max-width: none;
+  .options-wrapper .options {
+    margin-top: 0;
+  }
+}
+
+.select-wrapper {
+  --animation-duration: 150ms;
+  --text-color: var(--select-text-clr);
+  user-select: none;
+  position: relative;
+  width: fit-content;
+  min-width: 7rem;
+  max-width: none;
+  background: var(--select-bg);
+  border: 1px solid var(--select-stroke);
+  border-radius: 3px;
+  font-size: 0.9rem;
+
+  *:not(input) {
+    font-weight: 400;
+  }
+
+  .button,
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+
+  .button {
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    &::before {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      inset: 0;
+      content: "";
+      position: absolute;
+      z-index: 0;
+    }
+
+    .caret {
+      transform: rotate(180deg);
+      transition: transform calc(1.5 * var(--animation-duration));
+    }
+
+    span {
+      display: block;
+      overflow: hidden;
+      margin-right: 1rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .options-wrapper {
+    transform-origin: top;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    transform: scaleY(0);
+    width: 100%;
+    max-width: 23rem;
+    margin-top: 0.4rem;
+    padding: 0.4rem;
+    transition: transform var(--animation-duration);
+    transition-delay: calc(100ms + var(--animation-duration));
+    background: var(--select-bg);
+    border: 1px solid var(--select-stroke);
+    border-radius: 3px;
+
+    &.up {
+      transform-origin: bottom;
+      top: unset;
+      bottom: 100%;
+      margin-top: unset;
+      margin-bottom: 1rem;
+    }
+
+    &.right {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  .search-wrapper {
+    input {
+      outline: none;
+      width: 100%;
+      padding: 0.4rem 0.7rem;
+      transition: var(--animation-duration) border;
+      background-color: var(--select-input-bg);
+      border: 1px solid #505670;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      margin-bottom: 0.9rem;
+    }
+
+    input:focus {
+      border: 1px solid #4285f4;
+    }
+
+    input::placeholder {
+      color: var(--select-input-placeholder);
+    }
+  }
+
+  .options {
+    overflow-y: auto;
+    max-height: 20rem;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--select-scrollbar-track-bg);
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--select-scrollbar-thumb-bg);
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--select-scrollbar-thumb-hover-bg);
+    }
+
+    li {
+      position: relative;
+      padding: 0.4rem 1rem;
+      transition: var(--animation-duration) background-color;
+      border-radius: 4px;
+      font-size: inherit;
+
+      &:hover,
+      &.selected {
+        background-color: var(--select-option-hover);
+      }
+
+      &.selected::before {
+        content: "";
+        width: 0.35rem;
+        height: 0.35rem;
+        margin-right: 1rem;
+        background-color: var(--text-color);
+        border-radius: 50%;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .search-wrapper,
+  .options {
+    opacity: 0;
+    transition: var(--animation-duration) opacity;
+  }
+}
+
+.select-wrapper.active {
+  z-index: 2;
+  .options-wrapper {
+    transform: scaleY(1);
+    transition-delay: 0ms;
+  }
+
+  .search-wrapper,
+  .options {
+    opacity: 1;
+    transition-delay: calc(100ms + var(--animation-duration));
+  }
+
+  .caret {
+    transform: rotate(0deg);
+  }
+}

@@ -2082,7 +2082,7 @@ export const GRADE_12_SUBJECTS_COMPULSORY = [
 /**
  * Classes Available
  */
-export const CLASSES = ["11", "12"];
+export const CLASSES = ["11", "12"] as const;
 
 /**
  * These are the available grades as per the spec.

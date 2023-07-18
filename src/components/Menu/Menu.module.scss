@@ -1,0 +1,44 @@
+.menu {
+  display: flex;
+  gap: .3rem;
+
+  button {
+    background: transparent;
+    border: none;
+    align-items: baseline;
+    display: flex;
+    cursor: pointer;
+
+    svg {
+      height: 30px;
+      width: 30px;
+      color: var(--menu-icon-bg);
+      opacity: 0.8;
+      transition: 250ms opacity;
+    }
+
+    &:hover svg {
+      opacity: 1;
+    }
+  }
+}
+
+.h1 {
+  position: relative;
+  padding-right: 4ch;
+
+  .close {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    background-color: transparent;
+    border: none;
+  }
+}
+
+p.p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}

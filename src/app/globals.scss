@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-light: linear-gradient(102.17deg, #ffffff 0.24%, #787f9b 100.41%);
+  --card-bg-light: #fff;
+  --text-clr-light: #000000;
+  --text-clr-light-light: #252525;
+  --select-bg-light: #FFFFFF;
+  --select-text-light: #000;
+  --select-option-hover-light: #e6e8ef;
+  --select-input-bg-light: #eff1f5;
+  --select-stroke-light: #8b8c91;
+  --select-input-placeholder-light: #363636;
+
+  --result-light-table-row-even: #fff;
+  --result-light-table-row-odd: #ffffff99;
+
+  --menu-icon-bg-light: #272727;
+
+  --result-dark-table-row-odd: transparent;
+  --result-dark-table-row-even: #2e2e2e;
+
+  --bg-dark: linear-gradient(
+    101.54deg,
+    #111111 2.2%,
+    #232323 50.56%,
+    #121212 97.92%
+  );
+  --card-bg-dark: #171717;
+  --text-clr-dark: #fff;
+  --text-clr-dark-light: #bbbbbc;
+  --select-bg-dark: #2b2b2b;
+  --select-text-dark: #e9e9e9;
+  --select-option-hover-dark: #171717;
+  --select-input-bg-dark: #272727;
+  --select-input-placeholder-dark: #bfbfbf;
+  --select-stroke-dark: #7a7a7a;
+  --menu-icon-bg-dark: #BBBBBC;
+
+  --bg: var(--bg-light);
+  --card-bg: var(--card-bg-light);
+  --text-clr: var(--text-clr-light);
+  --text-clr-light: var(--text-clr-light-light);
+  --select-bg: var(--select-bg-light);
+  --select-text-clr: var(--select-text-light);
+  --select-option-hover: var(--select-option-hover-light);
+  --select-input-bg: var(--select-input-bg-light);
+  --select-stroke: var(--select-stroke-light);
+  --select-input-placeholder: var(--select-input-placeholder-light);
+  --result-table-row-even: var(--result-light-table-row-even);
+  --result-table-row-odd: var(--result-light-table-row-odd);
+
+  --menu-icon-bg: var(--menu-icon-bg-light);
+
+  --select-scrollbar-track-bg: transparent;
+  --select-scrollbar-thumb-bg: hsl(228, 22%, 65%);
+  --select-scrollbar-thumb-hover-bg: hsl(228, 22%, 55%);
+
+  font-size: 1.3rem;
+}
+
+html.dark {
+  --bg: var(--bg-dark);
+  --card-bg: var(--card-bg-dark);
+  --text-clr: var(--text-clr-dark);
+  --text-clr-light: var(--text-clr-dark-light);
+  --select-bg: var(--select-bg-dark);
+  --select-text-clr: var(--select-text-dark);
+  --select-option-hover: var(--select-option-hover-dark);
+  --select-input-bg: var(--select-input-bg-dark);
+  --select-stroke: var(--select-stroke-dark);
+  --select-input-placeholder: var(--select-input-placeholder-dark);
+
+  --select-scrollbar-track-bg: transparent;
+  --select-scrollbar-thumb-bg: #ddd;
+  --select-scrollbar-thumb-hover-bg: #fff;
+
+  --result-table-row-even: var(--result-dark-table-row-even);
+  --result-table-row-odd: var(--result-dark-table-row-odd);
+}
+
+html {
+  background: var(--bg);
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  overflow-y: auto;
+}

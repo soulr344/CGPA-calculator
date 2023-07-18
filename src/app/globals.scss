@@ -7,9 +7,10 @@
 :root {
   --bg-light: linear-gradient(102.17deg, #ffffff 0.24%, #787f9b 100.41%);
   --card-bg-light: #fff;
+  --modal-bg-light: #fff;
   --text-clr-light: #000000;
   --text-clr-light-light: #252525;
-  --select-bg-light: #FFFFFF;
+  --select-bg-light: #ffffff;
   --select-text-light: #000;
   --select-option-hover-light: #e6e8ef;
   --select-input-bg-light: #eff1f5;
@@ -30,6 +31,7 @@
     #232323 50.56%,
     #121212 97.92%
   );
+  --modal-bg-dark: #171717;
   --card-bg-dark: #171717;
   --text-clr-dark: #fff;
   --text-clr-dark-light: #bbbbbc;
@@ -39,10 +41,11 @@
   --select-input-bg-dark: #272727;
   --select-input-placeholder-dark: #bfbfbf;
   --select-stroke-dark: #7a7a7a;
-  --menu-icon-bg-dark: #BBBBBC;
+  --menu-icon-bg-dark: #bbbbbc;
 
   --bg: var(--bg-light);
   --card-bg: var(--card-bg-light);
+  --modal-bg: var(--modal-bg-light);
   --text-clr: var(--text-clr-light);
   --text-clr-light: var(--text-clr-light-light);
   --select-bg: var(--select-bg-light);
@@ -66,6 +69,7 @@
 html.dark {
   --bg: var(--bg-dark);
   --card-bg: var(--card-bg-dark);
+  --modal-bg: var(--modal-bg-dark);
   --text-clr: var(--text-clr-dark);
   --text-clr-light: var(--text-clr-dark-light);
   --select-bg: var(--select-bg-dark);
@@ -81,11 +85,17 @@ html.dark {
 
   --result-table-row-even: var(--result-dark-table-row-even);
   --result-table-row-odd: var(--result-dark-table-row-odd);
+
+  svg#formula-svg {
+    filter: invert(1);
+  }
 }
 
 html {
   background: var(--bg);
   height: 100%;
+
+  color: var(--text-clr);
 }
 
 body {
@@ -94,4 +104,12 @@ body {
   height: 100vh;
 
   overflow-y: auto;
+}
+
+a {
+  color: #0044cc;
+}
+
+svg {
+  color: inherit;
 }

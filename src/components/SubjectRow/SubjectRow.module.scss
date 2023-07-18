@@ -1,0 +1,11 @@
+.subject-row {
+  display: flex;
+  gap: 0 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .flex-1 {
+    flex: 1;
+    width: 100%;
+  }
+}

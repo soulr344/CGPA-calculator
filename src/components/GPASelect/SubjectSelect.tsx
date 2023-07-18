@@ -1,37 +1,31 @@
-import {
-  SUB_11_COMP_SUBS,
-  SUB_11_DETAILS_ASC,
-  SUB_12_COMP_SUBS,
-  SUB_12_DETAILS_ASC,
-} from "@/data/data";
+import { useDataStore } from "@/store/dataStore";
 import { CustomSelectInput } from "../CustomSelect";
 import { memo, useMemo } from "react";
-
-function getSubjectsDetail(optional: boolean, grade: number) {
-  if (optional) return grade === 11 ? SUB_11_DETAILS_ASC : SUB_12_DETAILS_ASC;
-  return grade === 11 ? SUB_11_COMP_SUBS : SUB_12_COMP_SUBS;
-}
+import { SUBJECT_DATA } from "@/data/data";
 
 function SubjectSelect({
   id,
   name,
-  grade,
   optional = false,
 }: {
   id: number;
   name: string;
-  grade: number | null;
   optional?: boolean;
 }) {
+  const { grade } = useDataStore();
+
+  const subject_list = useMemo(
+    () => SUBJECT_DATA[grade][optional ? "optional" : "compulsory"],
+    [grade, optional]
+  );
+
   const options = useMemo(
     () =>
-      grade == null
-        ? [{ name: "Select Grade First", value: -1 }]
-        : getSubjectsDetail(optional, grade).map((sub, index) => ({
-            name: sub.name,
-            value: index,
-          })),
-    [grade, optional]
+      subject_list.map((subject, index) => ({
+        name: subject.name,
+        value: index,
+      })),
+    [subject_list]
   );
 
   return (

@@ -3,6 +3,7 @@ import CloseIcon from "@/components/Menu/icons/CloseIcon";
 import { useModalStore } from "@/store/modalStore";
 
 import styles from "./SettingsModal.module.scss";
+import Toggle from "@/components/Toggle/Toggle";
 
 export default function SettingsModal({}) {
   const { settingsModal, toggleSettingsModal } = useModalStore();
@@ -15,7 +16,9 @@ export default function SettingsModal({}) {
           <CloseIcon />
         </button>
       </h1>
-      <div className={styles.body}></div>
+      <div className={styles.body}>
+        <Toggle />
+      </div>
     </Modal>
   );
 }

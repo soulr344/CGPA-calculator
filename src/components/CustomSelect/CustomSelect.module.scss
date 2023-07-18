@@ -11,8 +11,8 @@
 }
 
 .select-wrapper.no-input {
-  width: fit-content;
   min-width: 7rem;
+  width: 100%;
   max-width: none;
   .options-wrapper .options {
     margin-top: 0;
@@ -24,8 +24,8 @@
   --text-color: var(--select-text-clr);
   user-select: none;
   position: relative;
-  width: fit-content;
   min-width: 7rem;
+  width: 100%;
   max-width: none;
   background: var(--select-bg);
   border: 1px solid var(--select-stroke);
@@ -53,7 +53,7 @@
     border: none;
     font-size: inherit;
     &::before {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       inset: 0;
       content: "";
       position: absolute;

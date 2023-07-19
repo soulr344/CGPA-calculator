@@ -15,13 +15,13 @@ export default function Menu() {
   return (
     <>
       <div className={styles.menu}>
-        <button onClick={toggleInfoModal}>
+        <button onClick={toggleInfoModal} aria-label="About GPA Calculator">
           <InfoIcon />
         </button>
-        <button onClick={toggleHelpModal}>
+        <button onClick={toggleHelpModal} aria-label="Help for using GPA Calculator">
           <AboutIcon />
         </button>
-        <button onClick={toggleSettingsModal}>
+        <button onClick={toggleSettingsModal} aria-label="Settings">
           <SettingsIcon />
         </button>
       </div>

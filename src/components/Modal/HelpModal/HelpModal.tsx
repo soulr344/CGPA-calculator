@@ -12,7 +12,7 @@ export default function HelpModal({}) {
     <Modal open={helpModal} onBackdropClick={toggleHelpModal}>
       <h1 className={styles.h1}>
         How to use?
-        <button className={styles.close} onClick={toggleHelpModal}>
+        <button className={styles.close} onClick={toggleHelpModal} aria-label="Close Help">
           <CloseIcon />
         </button>
       </h1>

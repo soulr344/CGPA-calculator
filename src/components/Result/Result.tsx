@@ -106,7 +106,7 @@ export default function Result({
   return (
     <div className={c(styles.result, { [styles.open]: resultOpen })}>
       <h1>
-        <button onClick={toggleResult} className={styles.back}>
+        <button onClick={toggleResult} className={styles.back} aria-label="Go back to main page">
           <BackIcon />
         </button>
         Result

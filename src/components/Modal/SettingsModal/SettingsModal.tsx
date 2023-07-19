@@ -12,7 +12,11 @@ export default function SettingsModal({}) {
     <Modal open={settingsModal} onBackdropClick={toggleSettingsModal}>
       <h1 className={styles.h1}>
         Settings
-        <button className={styles.close} onClick={toggleSettingsModal}>
+        <button
+          className={styles.close}
+          onClick={toggleSettingsModal}
+          aria-label="Close Settings"
+        >
           <CloseIcon />
         </button>
       </h1>

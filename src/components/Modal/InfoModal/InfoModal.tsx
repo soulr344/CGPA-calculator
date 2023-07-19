@@ -11,7 +11,7 @@ export default function InfoModal({}) {
     <Modal open={infoModal} onBackdropClick={toggleInfoModal}>
       <h1 className={styles.h1}>
         About
-        <button className={styles.close} onClick={toggleInfoModal}>
+        <button className={styles.close} onClick={toggleInfoModal} aria-label="Close About">
           <CloseIcon />
         </button>
       </h1>

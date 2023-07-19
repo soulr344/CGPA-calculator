@@ -13,7 +13,7 @@
   --select-bg-light: #ffffff;
   --select-text-light: #000;
   --select-option-hover-light: #e6e8ef;
-  --select-input-bg-light: #eff1f5;
+  --select-input-bg-light: #fcfcfd;
   --select-stroke-light: #8b8c91;
   --select-input-placeholder-light: #363636;
 
@@ -93,7 +93,6 @@ html.dark {
 
 html {
   background: var(--bg);
-  height: 100%;
 
   color: var(--text-clr);
 }
@@ -101,7 +100,7 @@ html {
 body {
   display: grid;
   place-items: center;
-  height: 100vh;
+  min-height: 100vh;
 
   overflow-y: auto;
 }
@@ -112,4 +111,14 @@ a {
 
 svg {
   color: inherit;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+hr {
+  margin-top: 1rem;
 }

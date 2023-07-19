@@ -5,14 +5,14 @@ import HelpModal from "@/components/Modal/HelpModal/HelpModal";
 import InfoModal from "@/components/Modal/InfoModal/InfoModal";
 import SettingsModal from "@/components/Modal/SettingsModal/SettingsModal";
 import { CustomSelect } from "@/components/CustomSelect";
-import { CLASSES, GRADES } from "@/data/data";
+import { CLASSES } from "@/data/data";
 import { useDataStore } from "@/store/dataStore";
 import { useCallback } from "react";
 import SubjectRow from "@/components/SubjectRow";
-import { SubjectSelect } from "@/components/GPASelect";
+import Button from "@/components/Button";
 
 export default function Home() {
-  const { grade, setGrade } = useDataStore();
+  const { grade, setGrade, ...store } = useDataStore();
 
   const handleGradeChange = useCallback(
     (value: number) => {
@@ -50,10 +50,17 @@ export default function Home() {
           </div>
           <div className={styles["row-container"]}>
             {[0, 1, 2, 3, 4, 5].map((index) => (
-              <SubjectRow grade={parseInt(grade)} id={index} key={index} />
+              <SubjectRow id={index} key={index + grade} />
             ))}
           </div>
         </div>
+        <Button
+          onClick={(e) => {
+            console.log(store);
+          }}
+        >
+          Calculate
+        </Button>
       </div>
       <HelpModal />
       <InfoModal />

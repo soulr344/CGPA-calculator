@@ -76,14 +76,14 @@
 
   .options-wrapper {
     transform-origin: top;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: absolute;
     z-index: 2;
     top: 100%;
     left: 0;
     transform: scaleY(0);
     width: 100%;
-    max-width: 23rem;
+    max-width: 25rem;
     margin-top: 0.4rem;
     padding: 0.4rem;
     transition: transform var(--animation-duration);
@@ -97,7 +97,7 @@
       top: unset;
       bottom: 100%;
       margin-top: unset;
-      margin-bottom: 1rem;
+      margin-bottom: .3rem;
     }
 
     &.right {

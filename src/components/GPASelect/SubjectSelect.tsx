@@ -7,12 +7,14 @@ function SubjectSelect({
   id,
   name,
   optional = false,
+  onChange,
 }: {
   id: number;
   name: string;
   optional?: boolean;
+  onChange: (value: number) => void;
 }) {
-  const { grade } = useDataStore();
+  const { grade, subjects } = useDataStore();
 
   const subject_list = useMemo(
     () => SUBJECT_DATA[grade][optional ? "optional" : "compulsory"],
@@ -30,7 +32,7 @@ function SubjectSelect({
 
   return (
     <>
-      <label htmlFor={name + "-btn"}>
+      <label htmlFor={name + "-btn"} style={{ whiteSpace: "nowrap" }}>
         {optional ? "Optional" : "Compulsory"} Subject{" "}
         {id < 3 ? "I".repeat(id + 1) : "I".repeat(id - 2)}:
       </label>
@@ -40,6 +42,8 @@ function SubjectSelect({
         placeholder="Search Subjects"
         title="Select Subject"
         options={options}
+        onChange={onChange}
+        defaultValue={options[subjects[id]].name}
       />
     </>
   );

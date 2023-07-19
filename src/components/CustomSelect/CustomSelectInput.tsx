@@ -24,6 +24,7 @@ type CustomSelectProps = {
   name: string;
   disabled?: boolean;
   defaultValue?: any;
+  onChange?: (value: number) => any;
 };
 
 const debounceMs = 400;
@@ -36,6 +37,7 @@ export default function CustomSelect({
   name,
   disabled = false,
   defaultValue,
+  onChange,
 }: CustomSelectProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -104,7 +106,11 @@ export default function CustomSelect({
       const value = target.dataset.value ?? "";
       const title = options[parseInt(value) ?? 0].name;
 
-      if (inputRef.current) inputRef.current.value = value;
+      if (inputRef.current) {
+        inputRef.current.value = value;
+        setIsChanged(true);
+        onChange?.(parseInt(value));
+      }
 
       setIsChanged(true);
       setDisplayName(title);
@@ -114,7 +120,7 @@ export default function CustomSelect({
 
       target.classList.add(styles.selected);
     },
-    [closeSelect, options, resetSelectedOption]
+    [closeSelect, options, onChange, resetSelectedOption]
   );
 
   const handleSearch = useCallback(

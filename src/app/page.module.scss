@@ -38,9 +38,11 @@
 
   .row-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
-    gap: .4rem;
+    gap: .6rem;
+
+    padding: 1rem 0;
+
     * {
       min-width: 0;
     }

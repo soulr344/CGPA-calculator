@@ -17,6 +17,9 @@ export default function SettingsModal({}) {
         </button>
       </h1>
       <div className={styles.body}>
+        <label htmlFor="darkModeToggle">
+          <h3>Dark Mode:</h3>
+        </label>
         <Toggle />
       </div>
     </Modal>

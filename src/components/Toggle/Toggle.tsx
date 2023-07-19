@@ -10,7 +10,7 @@ export default function Toggle() {
     <div className={styles["switch-container"]}>
       <input
         type="checkbox"
-        id="switch"
+        id="darkModeToggle"
         checked={darkMode}
         onChange={toggleDarkMode}
       />

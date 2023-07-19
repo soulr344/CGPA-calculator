@@ -7,12 +7,18 @@ import SettingsModal from "@/components/Modal/SettingsModal/SettingsModal";
 import { CustomSelect } from "@/components/CustomSelect";
 import { CLASSES } from "@/data/data";
 import { useDataStore } from "@/store/dataStore";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import SubjectRow from "@/components/SubjectRow";
 import Button from "@/components/Button";
+import Result from "@/components/Result/Result";
+import { calculateResult } from "@/utils/grade";
+import { useModalStore } from "@/store/modalStore";
 
 export default function Home() {
-  const { grade, setGrade, ...store } = useDataStore();
+  const data = useDataStore();
+  const { grade, setGrade } = data;
+
+  const { toggleResult } = useModalStore();
 
   const handleGradeChange = useCallback(
     (value: number) => {
@@ -20,6 +26,8 @@ export default function Home() {
     },
     [setGrade]
   );
+
+  const result = useMemo(() => calculateResult(data), [data]);
 
   return (
     <>
@@ -54,13 +62,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <Button
-          onClick={(e) => {
-            console.log(store);
-          }}
-        >
-          Calculate
-        </Button>
+        <p style={{ marginBottom: "1rem" }}>
+          Your GPA is: <b>{result.gpa}</b>
+        </p>
+        <Button onClick={toggleResult}>View Full Details</Button>
+        <Result result={result} />
       </div>
       <HelpModal />
       <InfoModal />

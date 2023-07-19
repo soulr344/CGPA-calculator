@@ -1,0 +1,123 @@
+.result {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  background: var(--card-bg);
+  border-radius: inherit;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: 250ms all;
+
+  padding: clamp(1rem, 1.5vw, 1.5rem);
+
+  display: flex;
+  flex-direction: column;
+
+  &.open {
+    transform: scaleY(1);
+  }
+
+  .back {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    color: var(--text-clr);
+  }
+
+  h1 {
+    font-size: 1.67rem;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .body {
+    width: 100%;
+    overflow: auto;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--select-scrollbar-track-bg);
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--select-scrollbar-thumb-bg);
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--select-scrollbar-thumb-hover-bg);
+    }
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+
+    tbody {
+      tr:nth-child(even) {
+        background-color: var(--result-table-row-even);
+      }
+
+      tr:nth-child(odd) {
+        background-color: var(--result-table-row-odd);
+      }
+    }
+
+    .span {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    td,
+    th {
+      text-align: center;
+      margin: 0.5rem 0;
+    }
+
+    thead tr {
+      position: sticky;
+      top: 0;
+      background: var(--card-bg);
+    }
+  }
+  colgroup {
+    col.code {
+      width: 6ch;
+    }
+    col.name {
+      width: 200px;
+    }
+    col.credit {
+      width: 150px;
+    }
+    col.gp {
+      width: 150px;
+    }
+    col.grade {
+      width: 100px;
+    }
+    col.finalgrade {
+      width: 150px;
+    }
+    col.finalgp {
+      width: 150px;
+    }
+    col.remarks {
+      width: 6ch;
+    }
+  }
+
+  .summary {
+    margin-top: 2rem;
+  }
+}

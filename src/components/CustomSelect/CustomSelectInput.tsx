@@ -27,7 +27,7 @@ type CustomSelectProps = {
   onChange?: (value: number) => any;
 };
 
-const debounceMs = 400;
+const debounceMs = 200;
 let timeout: NodeJS.Timeout | null = null;
 
 export default function CustomSelect({
@@ -130,9 +130,8 @@ export default function CustomSelect({
         ...options.filter((option) => RegExp(value, "i").test(option.name)),
       ];
       setDisplayOptions(newOptions);
-      changeOptionsOrientation();
     },
-    [changeOptionsOrientation, options]
+    [options]
   );
 
   const handleSearchDebounce = useCallback(
@@ -142,7 +141,9 @@ export default function CustomSelect({
         clearTimeout(timeout);
       }
 
-      timeout = setTimeout(() => handleSearch(target), debounceMs);
+      timeout = setTimeout(() => {
+        handleSearch(target);
+      }, debounceMs);
     },
     [handleSearch]
   );
@@ -154,6 +155,10 @@ export default function CustomSelect({
       )?.[0]?.value,
     [defaultValue, options]
   );
+
+  useEffect(() => {
+    changeOptionsOrientation();
+  }, [changeOptionsOrientation, displayOptions]);
 
   return (
     <div className={styles["select-wrapper"]} ref={selectWrapperRef}>

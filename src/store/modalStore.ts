@@ -9,6 +9,8 @@ type ModalStore = {
   toggleSettingsModal: () => void;
   darkMode: boolean;
   toggleDarkMode: () => void;
+  resultOpen: boolean;
+  toggleResult: () => void;
 };
 
 const useModalStore = create<ModalStore>((set) => ({
@@ -31,6 +33,12 @@ const useModalStore = create<ModalStore>((set) => ({
       };
     });
   },
+  resultOpen: false,
+  toggleResult: () =>
+    set((state) => ({
+      ...state,
+      resultOpen: !state.resultOpen,
+    })),
 }));
 
 export type { ModalStore };

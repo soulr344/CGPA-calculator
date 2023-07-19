@@ -3,6 +3,18 @@
  * Reference: https://drive.google.com/file/d/1dr4uTK0u23-oJjB_cIK16Ll-8XaYzq8m/view
  */
 
+export type SUBJECT_DETAIL = {
+  code: string;
+  name: string;
+  full_marks: string;
+  pass_marks: string;
+  total_credits: string;
+  theory_credit: string;
+  internal_credit: string;
+};
+
+export type SUBJECT_DETAILS = SUBJECT_DETAIL[];
+
 /**
  * Optional Subjects for grade 11
  */
@@ -997,7 +1009,7 @@ export const GRADE_11_SUBJECTS_OPTIONAL = [
     theory_credit: "2.50",
     internal_credit: "2.50",
   },
-];
+] as SUBJECT_DETAILS;
 
 /**
  * Compulsory Subjects for grade 11
@@ -1039,7 +1051,7 @@ export const GRADE_11_SUBJECTS_COMPULSORY = [
     theory_credit: "3.75",
     internal_credit: "1.25",
   },
-];
+] as SUBJECT_DETAILS;
 
 /**
  * Optional Subjects for grade 12
@@ -2035,7 +2047,7 @@ export const GRADE_12_SUBJECTS_OPTIONAL = [
     theory_credit: "2.50",
     internal_credit: "2.50",
   },
-];
+] as SUBJECT_DETAILS;
 
 /**
  * Compulsory Subjects for grade 12
@@ -2077,7 +2089,7 @@ export const GRADE_12_SUBJECTS_COMPULSORY = [
     theory_credit: "3.75",
     internal_credit: "1.25",
   },
-];
+] as SUBJECT_DETAILS;
 
 /**
  * Classes Available

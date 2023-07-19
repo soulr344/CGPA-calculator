@@ -7,7 +7,7 @@ import SettingsModal from "@/components/Modal/SettingsModal/SettingsModal";
 import { CustomSelect } from "@/components/CustomSelect";
 import { CLASSES } from "@/data/data";
 import { useDataStore } from "@/store/dataStore";
-import { useCallback, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import SubjectRow from "@/components/SubjectRow";
 import Button from "@/components/Button";
 import Result from "@/components/Result/Result";
@@ -18,7 +18,7 @@ export default function Home() {
   const data = useDataStore();
   const { grade, setGrade } = data;
 
-  const { toggleResult } = useModalStore();
+  const { toggleResult, toggleDarkMode } = useModalStore();
 
   const handleGradeChange = useCallback(
     (value: number) => {
@@ -26,6 +26,20 @@ export default function Home() {
     },
     [setGrade]
   );
+
+  useEffect(() => {
+    if (window.matchMedia) {
+      if (
+        window.matchMedia("(prefers-color-scheme: dark)").matches &&
+        !document.documentElement.classList.contains("light")
+      ) {
+        toggleDarkMode();
+        return;
+      }
+    }
+
+    document.documentElement.classList.contains("dark") && toggleDarkMode();
+  }, [toggleDarkMode]);
 
   const result = useMemo(() => calculateResult(data), [data]);
 

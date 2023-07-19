@@ -14,7 +14,7 @@ export default function Toggle() {
         checked={darkMode}
         onChange={toggleDarkMode}
       />
-      <label htmlFor="switch"></label>
+      <label htmlFor="darkModeToggle"></label>
     </div>
   );
 }

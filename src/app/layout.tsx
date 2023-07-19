@@ -1,5 +1,6 @@
 import "./globals.scss";
 import type { Metadata } from "next";
+import { cookies } from "next/dist/client/components/headers";
 import { Poppins } from "next/font/google";
 
 export const metadata: Metadata = {
@@ -35,8 +36,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const cookie = cookies().get("dark-mode");
+
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={
+        cookie === undefined
+          ? undefined
+          : cookie?.value === "true"
+          ? "dark"
+          : "light"
+      }
+    >
       <body className={poppins.className}>{children}</body>
     </html>
   );

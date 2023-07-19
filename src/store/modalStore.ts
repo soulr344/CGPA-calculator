@@ -27,6 +27,7 @@ const useModalStore = create<ModalStore>((set) => ({
   toggleDarkMode: () => {
     set((state) => {
       document.documentElement.classList.toggle("dark", !state.darkMode);
+      document.cookie = `dark-mode=${!state.darkMode}; Max-Age=1704085200`;
       return {
         ...state,
         darkMode: !state.darkMode,
